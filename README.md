@@ -5,6 +5,12 @@
 
 
 timespent : 2014.10~12
+
+
 tech : nxt, nxc
+
+
 functions : lineTracking, rotating, bypassingObstacle
+
+
 
