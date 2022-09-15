@@ -1,0 +1,42 @@
+#define distancem
+#define distanceM
+#define distanceMM
+
+void park() {
+  int d = 0;
+  distance = SensorUS(IN_3);
+  Wait(15);
+  distance += SensorUS(IN_3);
+  Wait(15);
+  distance += SensorUS(IN_3);
+  Wait(15);
+  distance += SensorUS(IN_3);
+  Wait(15);
+  
+  distance >>= 2;
+  
+  while(true) {
+    if((d = SensorUS(IN_3)) > distanceM && d < distanceMM) {
+      OnFwd(OUT_A, 80);
+      OnFwd(OUT_C, 30);
+      Wait(100);
+    }
+    else if (SensorUS(IN_3) < distancem) {
+     OnFwd(OUT_C, 80);
+     OnFwd(OUT_A, 30);
+     Wait(100);
+    }
+    else if(SensorUS(IN_3) == distance) {
+      OnFwd(OUT_AC, 80);
+      while(SensorUS(IN_3) == distance) Wait(15);
+    }
+    else if (SensorUS(IN_3) > distanceMMM) {
+     Off(OUT_AC);
+     break;
+    }
+  }
+  
+  Off(OUT_AC);
+}
+
+
