@@ -1,0 +1,22 @@
+#define BK 40
+#define WH 30
+
+void linetrack1() {
+  while(true){
+    if(SENSOR_1 < BK && SENSOR_4 < BK) { 
+      OnFwd(OUT_AC,80);
+    }
+    else if(SENSOR_1 > WH && SENSOR_4 < BK ) {
+      OnFwd(OUT_A, 80);
+      OnFwd(OUT_C, 30);
+    }
+    else if(SENSOR_1 < BK && SENSOR_4 > WH) {
+      OnFwd(OUT_A, 30);
+      OnFwd(OUT_C, 80);
+    }
+    else if(( (SENSOR_1 > 45) && (SENSOR_1 < 53)) && ((SENSOR_4 > 45) && (SENSOR_4 < 53 ))) {
+      break;
+    }
+      Wait(30);
+    }
+}
