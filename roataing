@@ -1,0 +1,13 @@
+case stateG:
+
+  OnRev(OUT_A, 80); 
+  RotateMotor(OUT_C, 80, 359);
+  OnRev(OUT_B, 80); 
+  Wait(500);
+  
+  OnRev(OUT_A, 80); 
+  RotateMotor(OUT_C, 80, 80);                    
+  Off(OUT_AC);
+
+next_state = stateH;
+break;
