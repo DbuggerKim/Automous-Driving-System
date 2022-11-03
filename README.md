@@ -13,7 +13,7 @@
 
 > timespent : 2014.10~12
 
-> tech : AlphaRex, nxt, nxc
+> tech : AlphaRex, NXC
 
 > functions : lineTracking, rotating, bypassingObstacle
 
